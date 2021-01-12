@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+@mixin fontNunito($font-size) {
+  font-family: "Nunito", sans-serif;
+  font-size: $font-size;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0 120px;
+
+  .header {
+    display: flex;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #cbd6e2;
+
+    .logo_mode_container {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        margin-right: 40px;
+
+        .logo_item {
+          margin-right: 19px;
+        }
+      }
+
+      .mode {
+        display: flex;
+
+        .mode_item {
+          @include fontNunito(16px);
+          text-decoration: none;
+        }
+
+        .mode_item:first-child {
+          margin-right: 22px;
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+
+      .nav_list {
+        display: flex;
+        margin-right: 40px;
+
+        .nav_item {
+          margin-right: 30px;
+
+          .nav_item_link {
+            @include fontNunito(16px);
+            text-decoration: none;
+          }
+        }
+
+        .nav_item:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .nav_getApp {
+        @include fontNunito(18px);
+        text-decoration: none;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 48px;
+        padding: 12px 32px;
+      }
+    }
+  }
+
+  main {
+
+    .block_top{
+      display: flex;
+      padding-top: 40px;
+      max-width: 1440px;
+      width: 100%;      
+      justify-content: space-between;
+
+      .block_top_content{
+        display: flex;
+        flex-direction: column;
+        padding-top: 200px;
+
+        .video_link_wrapper{
+          position: relative;
+          margin-bottom: 35px;
+          padding-left: 40px;
+          padding-top: 7px;
+        }
+  
+        .video_link{
+          @include fontNunito(16px);
+          text-decoration: none;
+          
+        }
+        .video_link::before{
+          content: url(./images/video_link_icon.png);
+          position: absolute;
+          top: 5%;
+          left: 0;        
+        }
+  
+        .block_top_title{
+          @include fontNunito(42px);
+          margin-bottom: 23px;
+          font-weight: bold;
+        }
+
+        .block_top_description {
+          @include fontNunito(18px);
+          margin-bottom: 15px;
+        }
+
+        a:nth-child(4){
+          margin-bottom: 20px;
+        }
+      }
+
+      .block_top_image{
+        max-width: 100%;
+        height: auto;
+      }
+      
+      
+    }
+  }
+}
