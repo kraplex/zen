@@ -26,6 +26,7 @@ ul {
   background-color: #fff;
   margin: 0 auto;
   padding: 0 120px;
+  box-sizing: border-box;
 
   .header {
     display: flex;
@@ -95,59 +96,106 @@ ul {
 
   main {
 
-    .block_top{
+    .main_block{
       display: flex;
       padding-top: 40px;
       max-width: 1440px;
       width: 100%;      
       justify-content: space-between;
+      align-items: flex-end;
 
-      .block_top_content{
+      .main_block_content{
         display: flex;
-        flex-direction: column;
-        padding-top: 200px;
-
-        .video_link_wrapper{
-          position: relative;
-          margin-bottom: 35px;
-          padding-left: 40px;
-          padding-top: 7px;
-        }
-  
-        .video_link{
-          @include fontNunito(16px);
-          text-decoration: none;
+        flex-direction: column;   
           
-        }
-        .video_link::before{
-          content: url(./images/video_link_icon.png);
-          position: absolute;
-          top: 5%;
-          left: 0;        
-        }
-  
-        .block_top_title{
+        .main_block_title{
           @include fontNunito(42px);
           margin-bottom: 23px;
           font-weight: bold;
         }
 
-        .block_top_description {
+        .main_block_description {
           @include fontNunito(18px);
-          margin-bottom: 15px;
-        }
-
-        a:nth-child(4){
-          margin-bottom: 20px;
-        }
+        }        
       }
 
-      .block_top_image{
-        max-width: 100%;
+      .main_block_image{        
+        width: 50%;
         height: auto;
+      }     
+    }
+
+    .main_block_top{
+      margin-bottom: 100px;
+
+      .video_link_wrapper{
+        position: relative;
+        margin-bottom: 35px;
+        padding-left: 40px;
+        padding-top: 7px;
+      }
+
+      .video_link{
+        @include fontNunito(16px);
+        text-decoration: none;       
+      }
+
+      .video_link::before{
+        content: url(./images/video_link_icon.png);
+        position: absolute;
+        transform-origin: 50% 44% 0;
+        top: 0;
+        left: 0;      
+        transform: rotateZ(0deg);  
+        transition-duration: 1000ms;
+      }
+
+      .video_link_wrapper:hover .video_link::before{ 
+        transform-origin: 50% 44% 0;       
+        transform: rotateZ(360deg);  
+        transition-duration: 1000ms;
+      }
+
+      .main_block_description{
+        margin-bottom: 15px;
+      }
+
+      a:nth-child(4){
+        margin-bottom: 20px;
+      }
+    }
+
+    .main_block_warranty{
+      margin-bottom: 130px;
+
+      .main_block_content{
+        padding-bottom: 110px;
+      }
+
+      .main_block_description{
+        max-width: 445px;
+      }
+
+      .main_block_description:nth-child(2){
+        margin-bottom: 12px;
+      }
+    }
+
+    .main_block_care{
+
+      p:nth-child(2){
+        margin-bottom: 12px;
+        max-width: 450px;
+      }
+
+      p:nth-child(3){
+        margin-bottom: 17px;
+        max-width: 366px;
       }
       
-      
+      p:nth-child(3){
+        max-width: 450px;
+      }
     }
   }
 }
